@@ -18,7 +18,7 @@ console.log(spaceSound, sound1, sound2);
 
 function init() {
   //console.log(textL);
-  document.querySelector("button").remove;
+  document.querySelector("button").classList.add("hide");
 
   loop();
 }
