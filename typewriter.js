@@ -1,26 +1,31 @@
 "use strict";
 
-window.addEventListener("DOMContentLoaded", init);
+//window.addEventListener("DOMContentLoaded", init);
+
+document.querySelector("button").addEventListener("click", init);
 
 const text = document.querySelector("#typewriter").textContent;
 let counter = 0;
 const textL = text.length;
-console.log(text);
+//console.log(text);
 let spaceSound = new Audio("typespace.mp3");
-console.log(spaceSound);
+let sound1 = new Audio("typekey1.mp3");
+let sound2 = new Audio("typekey2.mp3");
+document.querySelector("#typewriter").textContent = " ";
+console.log(spaceSound, sound1, sound2);
 
 //let textcopy = " ";
 
 function init() {
-  document.querySelector("#typewriter").textContent = " ";
-
-  console.log(textL);
+  //console.log(textL);
+  document.querySelector("button").remove;
 
   loop();
 }
 
 function loop() {
   let counterText = text.slice(0, counter + 1);
+  let counterAudio = counterText.slice(counter);
   //console.log(counterText);
   counter++;
 
@@ -31,6 +36,16 @@ function loop() {
     console.log(textcopy);
     document.querySelector("#typewriter").textContent = textcopy;
   }*/
+
+  console.log(counterAudio);
+
+  if (counterAudio == " ") {
+    spaceSound.play();
+  } else if (counterAudio == "t") {
+    sound1.play();
+  } else {
+    sound2.play();
+  }
 
   document.querySelector("#typewriter").textContent = counterText;
 
